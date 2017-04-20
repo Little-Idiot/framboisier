@@ -1,0 +1,10 @@
+# /etc/systemd/network/wlan0.network
+
+[Match]
+Name=wlan0
+
+[Link]
+MACAddress=<address_mac>
+
+[Network]
+Address=<address_ip>

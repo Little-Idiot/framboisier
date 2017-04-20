@@ -1,0 +1,29 @@
+# /etc/dnsmasq/dnsmasq.conf
+
+#### global ####################################################################
+interface=<dhcp_interface>
+bind-interfaces
+
+user=nobody
+group=nobody
+
+
+#### dhcp ######################################################################
+dhcp-range=<dhcp_address>,<dhcp_range>,<dhcp_mask>,4h
+
+dhcp-option=option:router,<dhcp_address>
+dhcp-option=option:netmask,<dhcp_mask>
+dhcp-option=option:dns-server,80.67.169.12,80.67.169.40
+
+
+#### dns #######################################################################
+port=0
+
+# never forward plain names (= names without a dot or domain part)
+domain-needed
+
+# never forward addresses in the non-routed address spaces
+bogus-priv
+
+# filter useless windows-originated DNS requests
+filterwin2k

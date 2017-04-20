@@ -1,0 +1,15 @@
+# /etc/systemd/network/eth0.network
+
+[Match]
+Name=eth0
+
+[Link]
+MACAddress=<address_mac>
+
+[Network]
+DHCP=yes
+
+[DHCP]
+SendHostname=false
+UserHostname=false
+UseDomains=false
